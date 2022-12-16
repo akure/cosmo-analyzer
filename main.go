@@ -43,4 +43,5 @@ func main() {
 	staking_view.UpdateSelfDelegation(stakingClient, validatorInfo)
 	export.WriteValidatorInfo(validatorInfo)
 	staking_view.GetDelegatedInfos(stakingClient, validatorInfo)
+	export.OutDelegatorMap()
 }

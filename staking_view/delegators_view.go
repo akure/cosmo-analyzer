@@ -105,14 +105,11 @@ func GetDelegatedInfos(sqc staking.QueryClient, vxis []ValidatorExportInfo) ([]D
 			total = total.Add(d.Balance)
 		}
 		DelegatorInfoMap[delAddress] = tmp
-		*totalPower = total.Amount.String()
-
-		// dvi.TotalPower = total.Amount.String()
+		*totalPower = total.Amount.String() // Pointer will reflect to all keys in DelegatorInfoMap
 		fmt.Printf(", Total Delegation Amount : %v,= %v \n", total.String(), *totalPower)
-		/////////////
+
 	}
-	fmt.Println("-------------------------------")
-	OutDelegatorMap()
+	// OutDelegatorMap()
 	return nil, nil
 }
 
